@@ -13,7 +13,6 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
@@ -702,8 +701,7 @@
             <!-- Memory 1 -->
             <div class="memory-card">
                 <div class="memory-photo">
-                    <!-- Reemplaza con tu foto: <img src="fotos/foto1.jpg" alt="Recuerdo"> -->
-                    <div class="placeholder">📸<br>Pon aquí tu<br>primera foto juntos</div>
+                    <img src="fotos/first_day.webp" alt="Nuestro primer día juntos">
                 </div>
                 <div class="memory-info">
                     <div class="memory-date">✨ Primer Encuentro</div>
@@ -714,7 +712,7 @@
             <!-- Memory 2 -->
             <div class="memory-card">
                 <div class="memory-photo">
-                    <div class="placeholder">📸<br>Pon aquí una foto<br>de una cita especial</div>
+                    <img src="fotos/first_date.webp" alt="Nuestra primera cita">
                 </div>
                 <div class="memory-info">
                     <div class="memory-date">💕 Nuestra Primera Cita</div>
@@ -724,7 +722,7 @@
             <!-- Memory 3 -->
             <div class="memory-card">
                 <div class="memory-photo">
-                    <div class="placeholder">📸<br>Pon aquí una foto<br>de un viaje o aventura</div>
+                    <img src="fotos/adventure.webp" alt="Nuestras aventuras juntos">
                 </div>
                 <div class="memory-info">
                     <div class="memory-date">🌍 Aventuras Juntos</div>
@@ -735,7 +733,7 @@
             <!-- Memory 4 -->
             <div class="memory-card">
                 <div class="memory-photo">
-                    <div class="placeholder">📸<br>Pon aquí tu<br>foto favorita juntos</div>
+                    <img src="fotos/peru_moment.webp" alt="Nuestro momento en Perú">
                 </div>
                 <div class="memory-info">
                     <div class="memory-date">❤️ Momento Favorito</div>
@@ -748,7 +746,7 @@
 
     <!-- Quiz Section -->
     <section class="quiz-section">
-        <h2 class="section-title">¿Cuánto Me Conoces?</h2>
+        <h2 class="section-title">¿Cuánto Nos Conocemos?</h2>
         <div class="quiz-container">
             <p class="quiz-intro">Un pequeño juego para ver qué tanto nos conocemos... 💕</p>
 
@@ -758,7 +756,7 @@
                 <div class="quiz-question">¿Cuál es mi comida favorita?</div>
                 <div class="quiz-options">
                     <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🍕 Pizza</div>
-                    <div class="quiz-option" data-correct="true" onclick="answerQuiz(this)">🍝 Pasta</div>
+                    <div class="quiz-option" data-correct="true" onclick="answerQuiz(this)">🍔 Hamburguesa</div>
                     <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🍣 Sushi</div>
                     <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🌮 Tacos</div>
                 </div>
@@ -766,13 +764,12 @@
 
             <div class="quiz-card" data-question="1">
                 <div class="quiz-progress">Pregunta 2 de 5</div>
-                <div class="quiz-question">¿Qué es lo primero que me enamoró de ti?</div>
+                <div class="quiz-question">¿Qué es lo primero que te enamoró de mi?</div>
                 <div class="quiz-options">
-                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">👀 Tus ojos</div>
-                    <div class="quiz-option" data-correct="true" onclick="answerQuiz(this)">😊 Tu sonrisa</div>
-                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">💃 Tu forma de caminar
-                    </div>
-                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🗣️ Tu voz</div>
+                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">👀 Mis ojos</div>
+                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">😊 Mi sonrisa</div>
+                    <div class="quiz-option" data-correct="true" onclick="answerQuiz(this)">🧔 Mi barba</div>
+                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🗣️ Mi voz</div>
                 </div>
             </div>
 
@@ -780,23 +777,24 @@
                 <div class="quiz-progress">Pregunta 3 de 5</div>
                 <div class="quiz-question">¿Cuál es nuestra canción?</div>
                 <div class="quiz-options">
-                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🎵 Perfect - Ed Sheeran
+                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🎵 La Plata - Diomedes Díaz
                     </div>
-                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🎵 All of Me - John Legend
+                    <div class="quiz-option" data-correct="true" onclick="answerQuiz(this)">🎵 Que Me Quedes Tú -
+                        Shakira</div>
+                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🎵 Mujeres - Ricardo Arjona
                     </div>
-                    <div class="quiz-option" data-correct="true" onclick="answerQuiz(this)">🎵 Nuestra canción especial
-                    </div>
-                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🎵 Thinking Out Loud</div>
+                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🎵 Bañarte en Mis Sueños -
+                        Binomio de Oro</div>
                 </div>
             </div>
 
             <div class="quiz-card" data-question="3">
                 <div class="quiz-progress">Pregunta 4 de 5</div>
-                <div class="quiz-question">¿Cuál es mi lugar favorito para estar contigo?</div>
+                <div class="quiz-question">¿Cuál es tu lugar favorito para estar conmigo?</div>
                 <div class="quiz-options">
                     <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🏖️ La playa</div>
-                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🏔️ La montaña</div>
-                    <div class="quiz-option" data-correct="true" onclick="answerQuiz(this)">🛋️ En casa acurrucados
+                    <div class="quiz-option" data-correct="true" onclick="answerQuiz(this)">🏔️ La montaña</div>
+                    <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🛋️ En casa acurrucados
                     </div>
                     <div class="quiz-option" data-correct="false" onclick="answerQuiz(this)">🌃 La ciudad de noche</div>
                 </div>
