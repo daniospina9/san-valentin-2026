@@ -887,9 +887,8 @@
         🔇
     </button>
 
-    <audio id="bgMusic" loop>
-        <!-- Agrega aquí tu canción favorita: -->
-        <!-- <source src="musica/cancion.mp3" type="audio/mpeg"> -->
+    <audio id="bgMusic">
+        <source src="audio/canción.mp3" type="audio/mpeg">
     </audio>
 
     <script>
@@ -1044,18 +1043,59 @@
 
         // ==================== Music ====================
         let musicPlaying = false;
-        function toggleMusic() {
-            const audio = document.getElementById('bgMusic');
-            const btn = document.getElementById('musicBtn');
+        const audio = document.getElementById('bgMusic');
+        const btn = document.getElementById('musicBtn');
 
+        function fadeOutAndRestart() {
+            const fadeDuration = 3000;
+            const steps = 30;
+            const interval = fadeDuration / steps;
+            let currentStep = 0;
+            const startVolume = audio.volume;
+
+            const fade = setInterval(() => {
+                currentStep++;
+                audio.volume = Math.max(0, startVolume * (1 - currentStep / steps));
+                if (currentStep >= steps) {
+                    clearInterval(fade);
+                    audio.currentTime = 0;
+                    audio.volume = 1;
+                    if (musicPlaying) {
+                        audio.play();
+                    }
+                }
+            }, interval);
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration - audio.currentTime <= 3 && audio.volume === 1) {
+                fadeOutAndRestart();
+            }
+        });
+
+        function startMusic() {
+            audio.volume = 1;
+            audio.play().then(() => {
+                musicPlaying = true;
+                btn.textContent = '🔊';
+            }).catch(() => {});
+        }
+
+        // Autoplay on first interaction
+        document.addEventListener('click', function autoplay() {
+            if (!musicPlaying) {
+                startMusic();
+            }
+            document.removeEventListener('click', autoplay);
+        }, { once: true });
+
+        function toggleMusic() {
             if (musicPlaying) {
                 audio.pause();
                 btn.textContent = '🔇';
                 musicPlaying = false;
             } else {
-                audio.play().catch(() => { });
-                btn.textContent = '🔊';
-                musicPlaying = true;
+                startMusic();
             }
         }
     </script>
